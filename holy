@@ -1,0 +1,81 @@
+class MessageRunnable implements Runnable {
+    private String message;
+    private int delay;
+
+    public MessageRunnable(String message, int delaySeconds) {
+        this.message = message;
+        this.delay = delaySeconds * 1000; // Convert seconds to milliseconds
+    }
+
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                System.out.println(message);
+                Thread.sleep(delay);
+            }
+        } catch (InterruptedException e) {
+            System.out.println(Thread.currentThread().getName() + " interrupted.");
+        }
+    }
+}
+
+public class RunnableExample {
+    public static void main(String[] args) {
+        // Create Runnable targets
+        MessageRunnable task1 = new MessageRunnable("Good Morning", 1);
+        MessageRunnable task2 = new MessageRunnable("Hello", 2);
+        MessageRunnable task3 = new MessageRunnable("Welcome", 3);
+
+        // Pass Runnable targets into Thread objects
+        Thread thread1 = new Thread(task1);
+        Thread thread2 = new Thread(task2);
+        Thread thread3 = new Thread(task3);
+
+        // Start execution
+        thread1.start();
+        thread2.start();
+        thread3.start();
+    }
+
+class MessageRunnable implements Runnable {
+    private String message;
+    private int delay;
+
+    public MessageRunnable(String message, int delaySeconds) {
+        this.message = message;
+        this.delay = delaySeconds * 1000; // Convert seconds to milliseconds
+    }
+
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                System.out.println(message);
+                Thread.sleep(delay);
+            }
+        } catch (InterruptedException e) {
+            System.out.println(Thread.currentThread().getName() + " interrupted.");
+        }
+    }
+}
+
+public class RunnableExample {
+    public static void main(String[] args) {
+        // Create Runnable targets
+        MessageRunnable task1 = new MessageRunnable("Good Morning", 1);
+        MessageRunnable task2 = new MessageRunnable("Hello", 2);
+        MessageRunnable task3 = new MessageRunnable("Welcome", 3);
+
+        // Pass Runnable targets into Thread objects
+        Thread thread1 = new Thread(task1);
+        Thread thread2 = new Thread(task2);
+        Thread thread3 = new Thread(task3);
+
+        // Start execution
+        thread1.start();
+        thread2.start();
+        thread3.start();
+    }
+}
+}
